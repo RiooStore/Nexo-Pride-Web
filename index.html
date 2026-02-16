@@ -42,7 +42,17 @@ body{background:radial-gradient(circle at top,#111 0%,#000 60%);color:#fff;min-h
 .social-top{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;}
 .social-bottom{display:flex;justify-content:center;}
 .social-btn{padding:14px 26px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:#fff;text-decoration:none;font-weight:700;}
-.social-btn:hover{background:#25D366;color:#000;}
+.social-btn{
+transition:.25s ease;
+}
+
+.social-btn:hover{
+transform:translateY(-3px) scale(1.03);
+background:rgba(255,255,255,.12);
+box-shadow:0 0 18px rgba(124,58,237,.35);
+color:#fff;
+border:1px solid rgba(124,58,237,.6);
+}
 .wa-btn{display:flex;align-items:center;gap:10px;}
 .wa-img{width:22px;height:22px;}
 
@@ -139,7 +149,7 @@ transform:scale(.92);
   <div class="nav-container">
     <div class="nav-left">
       <img src="logo.jpg" class="nav-logo">
-      <div class="nav-title">Nexo</div>
+      <div class="nav-title">Nexo Tim</div>
     </div>
     <div class="nav-right">
       <a href="#top" class="nav-btn">Home</a>
