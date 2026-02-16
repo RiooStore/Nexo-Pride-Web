@@ -6,15 +6,15 @@
 <title>Nexo Pride</title>
 
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://https://nexopride.vercel.app/">
+<meta property="og:url" content="https://nexopride.vercel.app/">
 <meta property="og:title" content="Nexo Pride">
 <meta property="og:description" content="Nexo Pride || Road To Femes Cc">
-<meta property="og:image" content="https://https://nexopride.vercel.app/logo.jpg">
+<meta property="og:image" content="https://nexopride.vercel.app/logo.jpg">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta property="twitter:title" content="Nexo Pride">
 <meta property="twitter:description" content="Nexo Pride || Road To Femes Cc">
-<meta property="twitter:image" content="https://https://nexopride.vercel.app/logo.jpg">
+<meta property="twitter:image" content="https://nexopride.vercel.app/logo.jpg">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-tap-highlight-color:transparent;}
@@ -66,7 +66,7 @@ footer{text-align:center;padding:40px 20px;opacity:.8;}
 
 @media(max-width:640px){.section-title{font-size:32px;}.banner video{height:250px;}}
 
-/* OVERLAY MASUK NEW */
+/* OVERLAY MASUK */
 .enter-overlay{
 position:fixed;
 inset:0;
@@ -76,13 +76,10 @@ display:flex;
 align-items:center;
 justify-content:center;
 z-index:9999;
-animation:fadeIn .8s ease;
+transition:opacity .6s ease, transform .6s ease;
 }
 
-.enter-overlay{
-transition:all .6s ease;
-}
-
+/* EFEK SAAT DITUTUP */
 .enter-overlay.hide{
 opacity:0;
 transform:scale(1.05);
@@ -98,15 +95,9 @@ text-align:center;
 max-width:320px;
 width:90%;
 backdrop-filter:blur(12px);
-animation:scaleIn .6s ease;
 }
 
-.enter-box h1{
-font-size:20px;
-font-weight:800;
-line-height:1.4;
-}
-
+/* TOMBOL */
 .enter-btn{
 margin-top:25px;
 padding:14px 45px;
@@ -117,7 +108,7 @@ border:none;
 cursor:pointer;
 background:linear-gradient(135deg,#25D366,#7c3aed);
 color:#000;
-transition:.3s;
+transition:.25s;
 }
 
 .enter-btn:hover{
@@ -125,15 +116,9 @@ transform:scale(1.05);
 filter:brightness(1.15);
 }
 
-/* ANIMASI */
-@keyframes fadeIn{
-from{opacity:0}
-to{opacity:1}
-}
-
-@keyframes scaleIn{
-from{transform:scale(.8);opacity:0}
-to{transform:scale(1);opacity:1}
+/* EFEK PENCET */
+.enter-btn:active{
+transform:scale(.92);
 }
 </style>
 </head>
@@ -264,11 +249,19 @@ const enterOverlay=document.getElementById("enterOverlay");
 const video=document.getElementById("bannerVideo");
 
 function startSite(){
-  enterOverlay.classList.add("hide");
+
+  const btn = document.querySelector(".enter-btn");
+
+  btn.style.transform = "scale(.9)";
+  btn.style.filter = "brightness(1.2)";
+
+  setTimeout(()=>{
+    enterOverlay.classList.add("hide");
+  },150);
 
   setTimeout(()=>{
     enterOverlay.style.display="none";
-  },600);
+  },750);
 
   video.muted=false;
   video.play();
