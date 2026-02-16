@@ -66,11 +66,65 @@ footer{text-align:center;padding:40px 20px;opacity:.8;}
 
 @media(max-width:640px){.section-title{font-size:32px;}.banner video{height:250px;}}
 
-/* OVERLAY MASUK */
-.enter-overlay{position:fixed;inset:0;backdrop-filter:blur(20px);background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;z-index:9999;}
-.enter-box{text-align:center;}
-.enter-btn{margin-top:25px;padding:16px 50px;font-size:18px;font-weight:800;border-radius:14px;border:none;cursor:pointer;background:linear-gradient(135deg,#25D366,#7c3aed);color:#000;transition:.3s;}
-.enter-btn:hover{transform:scale(1.08);filter:brightness(1.2);}
+/* OVERLAY MASUK NEW */
+.enter-overlay{
+position:fixed;
+inset:0;
+background:linear-gradient(180deg,rgba(0,0,0,.65),rgba(0,0,0,.85));
+backdrop-filter:blur(8px);
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+animation:fadeIn .8s ease;
+}
+
+.enter-box{
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.12);
+padding:40px 30px;
+border-radius:22px;
+text-align:center;
+max-width:320px;
+width:90%;
+backdrop-filter:blur(12px);
+animation:scaleIn .6s ease;
+}
+
+.enter-box h1{
+font-size:20px;
+font-weight:800;
+line-height:1.4;
+}
+
+.enter-btn{
+margin-top:25px;
+padding:14px 45px;
+font-size:16px;
+font-weight:800;
+border-radius:12px;
+border:none;
+cursor:pointer;
+background:linear-gradient(135deg,#25D366,#7c3aed);
+color:#000;
+transition:.3s;
+}
+
+.enter-btn:hover{
+transform:scale(1.05);
+filter:brightness(1.15);
+}
+
+/* ANIMASI */
+@keyframes fadeIn{
+from{opacity:0}
+to{opacity:1}
+}
+
+@keyframes scaleIn{
+from{transform:scale(.8);opacity:0}
+to{transform:scale(1);opacity:1}
+}
 </style>
 </head>
 
@@ -79,7 +133,8 @@ footer{text-align:center;padding:40px 20px;opacity:.8;}
 <!-- OVERLAY MASUK -->
 <div class="enter-overlay" id="enterOverlay">
   <div class="enter-box">
-    <h1>WELCOME KLIK TOMBOL DI NAWAH UNTUK MELANJUTKAN</h1>
+    <h1>Welcome To<br>Nexo Pride</h1>
+    <p style="opacity:.7;margin-top:8px;">Klik tombol untuk masuk</p>
     <button class="enter-btn" onclick="startSite()">MASUK</button>
   </div>
 </div>
