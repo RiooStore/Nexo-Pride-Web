@@ -79,6 +79,16 @@ z-index:9999;
 animation:fadeIn .8s ease;
 }
 
+.enter-overlay{
+transition:all .6s ease;
+}
+
+.enter-overlay.hide{
+opacity:0;
+transform:scale(1.05);
+pointer-events:none;
+}
+
 .enter-box{
 background:rgba(255,255,255,.05);
 border:1px solid rgba(255,255,255,.12);
@@ -254,7 +264,12 @@ const enterOverlay=document.getElementById("enterOverlay");
 const video=document.getElementById("bannerVideo");
 
 function startSite(){
-  enterOverlay.style.display="none";
+  enterOverlay.classList.add("hide");
+
+  setTimeout(()=>{
+    enterOverlay.style.display="none";
+  },600);
+
   video.muted=false;
   video.play();
 }
