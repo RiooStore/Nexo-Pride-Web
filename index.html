@@ -279,10 +279,19 @@ transform:scale(.92);
 </div>
 
 <script>
-document.querySelectorAll('.accordion').forEach(card=>{
-  card.querySelector('.card-header').onclick=()=>{
+document.querySelectorAll('.accordion').forEach(card => {
+  card.querySelector('.card-header').onclick = () => {
+
+    // tutup semua card lain
+    document.querySelectorAll('.accordion').forEach(otherCard => {
+      if (otherCard !== card) {
+        otherCard.classList.remove('active');
+      }
+    });
+
+    // toggle card yang diklik
     card.classList.toggle('active');
-  }
+  };
 });
 
 const openMenu=document.getElementById('openMenu');
