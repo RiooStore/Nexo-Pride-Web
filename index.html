@@ -79,8 +79,13 @@ transition:transform .1s;
   max-height:0;
   overflow:hidden;
   opacity:0;
-  transform:translateY(-15px);
-  transition: all .45s cubic-bezier(.4,0,.2,1);
+  transform:translateY(-10px);
+  transition:
+    max-height .5s ease,
+    opacity .3s ease,
+    transform .3s ease,
+    padding .3s ease;
+  padding-top:0;
 }
 
 .card.active .card-content{
