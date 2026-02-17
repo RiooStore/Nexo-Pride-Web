@@ -79,17 +79,12 @@ transition:transform .1s;
   max-height:0;
   overflow:hidden;
   opacity:0;
-  transform:translateY(-8px);
+  transform:translateY(-10px);
   transition:
-    max-height .55s cubic-bezier(.4,0,.2,1),
-    opacity .35s ease,
-    transform .35s ease;
-}
-
-.card.active .card-content{
-  opacity:1;
-  transform:translateY(0);
-  margin-top:16px;
+    max-height .45s cubic-bezier(.4,0,.2,1),
+    opacity .3s ease,
+    transform .3s ease;
+  will-change:max-height,opacity,transform;
 }
 
 .card.active .card-content{
@@ -307,21 +302,41 @@ document.querySelectorAll('.accordion').forEach(card => {
 
     document.querySelectorAll('.accordion').forEach(otherCard => {
 
-      const otherContent = otherCard.querySelector('.card-content');
-
       if (otherCard !== card) {
-        otherCard.classList.remove('active');
-        otherContent.style.maxHeight = null;
+
+        const otherContent = otherCard.querySelector('.card-content');
+
+        if (otherCard.classList.contains('active')) {
+
+          otherContent.style.maxHeight = otherContent.scrollHeight + "px";
+
+          requestAnimationFrame(() => {
+            otherContent.style.maxHeight = 0;
+          });
+
+          otherCard.classList.remove('active');
+
+        }
+
       }
 
     });
 
-    card.classList.toggle('active');
-
     if (card.classList.contains('active')) {
+
       content.style.maxHeight = content.scrollHeight + "px";
+
+      requestAnimationFrame(() => {
+        content.style.maxHeight = 0;
+      });
+
+      card.classList.remove('active');
+
     } else {
-      content.style.maxHeight = null;
+
+      card.classList.add('active');
+      content.style.maxHeight = content.scrollHeight + "px";
+
     }
 
   };
