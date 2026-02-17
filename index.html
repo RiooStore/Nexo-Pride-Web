@@ -75,8 +75,23 @@ transition:transform .1s;
 .card{background:rgba(255,255,255,.05);border-radius:18px;padding:22px;border:1px solid rgba(255,255,255,.1);margin-bottom:16px;}
 .card-header{font-size:20px;font-weight:800;cursor:pointer;}
 .card-sub{margin-top:6px;opacity:.75;font-size:14px;}
-.card-content{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s ease;}
-.card.active .card-content{max-height:600px;padding-top:16px;}
+.card-content{
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(-8px);
+  transition:
+    max-height .55s cubic-bezier(.4,0,.2,1),
+    opacity .35s ease,
+    transform .35s ease,
+    padding .4s ease;
+}
+
+.card.active .card-content{
+  opacity:1;
+  transform:translateY(0);
+  padding-top:16px;
+}
 
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:.3s;z-index:998;}
 .overlay.active{opacity:1;pointer-events:auto;}
@@ -280,18 +295,32 @@ transform:scale(.92);
 
 <script>
 document.querySelectorAll('.accordion').forEach(card => {
+
+  const content = card.querySelector('.card-content');
+
   card.querySelector('.card-header').onclick = () => {
 
-    // tutup semua card lain
     document.querySelectorAll('.accordion').forEach(otherCard => {
+
+      const otherContent = otherCard.querySelector('.card-content');
+
       if (otherCard !== card) {
         otherCard.classList.remove('active');
+        otherContent.style.maxHeight = null;
       }
+
     });
 
-    // toggle card yang diklik
     card.classList.toggle('active');
+
+    if (card.classList.contains('active')) {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } else {
+      content.style.maxHeight = null;
+    }
+
   };
+
 });
 
 const openMenu=document.getElementById('openMenu');
