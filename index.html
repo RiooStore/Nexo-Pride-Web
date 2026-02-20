@@ -267,18 +267,18 @@ transform:scale(.92);
     <div class="card-header">List Babu Nexo 🔥</div>
     <div class="card-sub">Kacungg Semuaa</div>
     <div class="card-content">
-      <div class="social-btn" style="display:block;margin-bottom:10px;text-align:left;" onclick="openBabu()">
+    <div class="social-btn" style="display:block;margin-bottom:10px;text-align:left;" onclick="openBabu()">
     • Matadore : <br>
     &nbsp;&nbsp;&nbsp;• M1 : Nexo Win <br>
     &nbsp;&nbsp;&nbsp;- M2 : Matadore Win <br>
     &nbsp;&nbsp;&nbsp;- M3 : Nexo Win
     </div>
-      <div class="social-btn" style="display:block;margin-bottom:10px;text-align:left;">
-    • ... : <br>
-    &nbsp;&nbsp;&nbsp;• M1 :  Win <br>
-    &nbsp;&nbsp;&nbsp;- M2 :  Win <br>
-    &nbsp;&nbsp;&nbsp;- M3 :  Win
-    </div>
+    <div class="social-btn" style="display:block;margin-bottom:10px;text-align:left;" onclick="openXaverlus()">
+    • Xaverlus : <br>
+    &nbsp;&nbsp;&nbsp;• M1 : Xaverlus Win <br>
+    &nbsp;&nbsp;&nbsp;- M2 : Nexo Win <br>
+    &nbsp;&nbsp;&nbsp;- M3 : Nexo Win
+     </div>
       <div class="social-btn" style="display:block;margin-bottom:10px;text-align:left;">
     • ... : <br>
     &nbsp;&nbsp;&nbsp;• M1 : ... Win <br>
@@ -406,6 +406,23 @@ document.addEventListener("click", e=>{
     closeBabu();
   }
 });
+
+let xaverlusPopup;
+
+function openXaverlus(){
+  xaverlusPopup = document.getElementById("xaverlusPopup");
+  xaverlusPopup.classList.add("active");
+}
+
+function closeXaverlus(){
+  xaverlusPopup.classList.remove("active");
+}
+
+document.addEventListener("click", e=>{
+  if(e.target.id === "xaverlusPopup"){
+    closeXaverlus();
+  }
+});
 </script>
 
 <div class="babu-popup" id="babuPopup">
@@ -417,6 +434,20 @@ document.addEventListener("click", e=>{
       <div class="babu-item"><p>M2</p><img src="BABUIMG/MATADORE/M2.jpg"></div>
       <div class="babu-item"><p>M3</p><img src="BABUIMG/MATADORE/M3.jpg"></div>
       <div class="babu-item"><p>NAMA CC</p><img src="BABUIMG/MATADORE/NAMACC.jpg"></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="babu-popup" id="xaverlusPopup">
+  <div class="babu-box">
+    <div class="babu-close" onclick="closeXaverlus()">✕</div>
+
+    <div class="babu-grid">
+      <div class="babu-item"><p>M1</p><img src="BABUIMG/XAVERLUS/M1.jpg"></div>
+      <div class="babu-item"><p>M2</p><img src="BABUIMG/XAVERLUS/M2.jpg"></div>
+      <div class="babu-item"><p>M3</p><img src="BABUIMG/XAVERLUS/M3.jpg"></div>
+      <div class="babu-item"><p>NAMA CC</p><img src="BABUIMG/XAVERLUS/NAMACC.jpg"></div>
     </div>
 
   </div>
