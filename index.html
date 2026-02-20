@@ -161,6 +161,14 @@ filter:brightness(1.15);
 .enter-btn:active{
 transform:scale(.92);
 }
+
+.babu-popup{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:.35s;z-index:9999;}
+.babu-popup.active{opacity:1;pointer-events:auto;}
+.babu-box{background:#0b0b0b;padding:25px;border-radius:20px;width:90%;max-width:500px;position:relative;}
+.babu-close{position:absolute;top:10px;right:15px;font-size:22px;cursor:pointer;}
+.babu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:10px;}
+.babu-item p{font-weight:800;margin-bottom:6px;text-align:center;}
+.babu-item img{width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.15);}
 </style>
 </head>
 
@@ -259,7 +267,7 @@ transform:scale(.92);
     <div class="card-header">List Babu Nexo 🔥</div>
     <div class="card-sub">Kacungg Semuaa</div>
     <div class="card-content">
-      <div class="social-btn" style="display:block;margin-bottom:10px;text-align:left;">
+      <div class="social-btn" style="display:block;margin-bottom:10px;text-align:left;" onclick="openBabu()">
     • Matadore : <br>
     &nbsp;&nbsp;&nbsp;• M1 : Nexo Win <br>
     &nbsp;&nbsp;&nbsp;- M2 : Matadore Win <br>
@@ -381,7 +389,37 @@ function startSite(){
   video.muted=false;
   video.play();
 }
+
+const babuPopup = document.getElementById("babuPopup");
+
+function openBabu(){
+  babuPopup.classList.add("active");
+}
+
+function closeBabu(){
+  babuPopup.classList.remove("active");
+}
+
+babuPopup.onclick = e =>{
+  if(e.target === babuPopup){
+    closeBabu();
+  }
+}
 </script>
+
+<div class="babu-popup" id="babuPopup">
+  <div class="babu-box">
+    <div class="babu-close" onclick="closeBabu()">✕</div>
+
+    <div class="babu-grid">
+      <div class="babu-item"><p>M1</p><img src="img1.jpg"></div>
+      <div class="babu-item"><p>M2</p><img src="img2.jpg"></div>
+      <div class="babu-item"><p>M3</p><img src="img3.jpg"></div>
+      <div class="babu-item"><p>NAMA CC</p><img src="img4.jpg"></div>
+    </div>
+
+  </div>
+</div>
 
 </body>
 </html>
