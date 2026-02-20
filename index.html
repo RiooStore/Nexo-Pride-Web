@@ -390,9 +390,10 @@ function startSite(){
   video.play();
 }
 
-const babuPopup = document.getElementById("babuPopup");
+let babuPopup;
 
 function openBabu(){
+  babuPopup = document.getElementById("babuPopup");
   babuPopup.classList.add("active");
 }
 
@@ -400,11 +401,11 @@ function closeBabu(){
   babuPopup.classList.remove("active");
 }
 
-babuPopup.onclick = e =>{
-  if(e.target === babuPopup){
+document.addEventListener("click", e=>{
+  if(e.target.id === "babuPopup"){
     closeBabu();
   }
-}
+});
 </script>
 
 <div class="babu-popup" id="babuPopup">
@@ -412,10 +413,10 @@ babuPopup.onclick = e =>{
     <div class="babu-close" onclick="closeBabu()">✕</div>
 
     <div class="babu-grid">
-      <div class="babu-item"><p>M1</p><img src="img1.jpg"></div>
-      <div class="babu-item"><p>M2</p><img src="img2.jpg"></div>
-      <div class="babu-item"><p>M3</p><img src="img3.jpg"></div>
-      <div class="babu-item"><p>NAMA CC</p><img src="img4.jpg"></div>
+      <div class="babu-item"><p>M1</p><img src="BABUIMG/MATADORE/M1.jpg"></div>
+      <div class="babu-item"><p>M2</p><img src="BABUIMG/MATADORE/M2.jpg"></div>
+      <div class="babu-item"><p>M3</p><img src="BABUIMG/MATADORE/M3.jpg"></div>
+      <div class="babu-item"><p>NAMA CC</p><img src="BABUIMG/MATADORE/NAMACC.jpg"></div>
     </div>
 
   </div>
