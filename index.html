@@ -169,6 +169,9 @@ transform:scale(.92);
 .babu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:10px;}
 .babu-item p{font-weight:800;margin-bottom:6px;text-align:center;}
 .babu-item img{width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.15);}
+.babu-item:last-child{
+  grid-column: span 2;
+}
 </style>
 </head>
 
@@ -257,6 +260,15 @@ transform:scale(.92);
     &nbsp;&nbsp;&nbsp;• Ziqq Katanya P Laga 🤫 <br>
     &nbsp;&nbsp;&nbsp;• Zamm Okelah 🔥 <br>
     &nbsp;&nbsp;&nbsp;• Reyaldi Boss 🤫 <br>
+    &nbsp;&nbsp;&nbsp;• Malk Bezirr 🥵 <br>
+    &nbsp;&nbsp;&nbsp;• -
+    </div>
+    <div class="social-btn" style="display:block;margin-bottom:10px;text-align:left;">
+    • Player Inti Nexo : <br>
+    &nbsp;&nbsp;&nbsp;• - <br>
+    &nbsp;&nbsp;&nbsp;• - <br>
+    &nbsp;&nbsp;&nbsp;• - <br>
+    &nbsp;&nbsp;&nbsp;• - <br>
     &nbsp;&nbsp;&nbsp;• -
     </div>
 
@@ -278,12 +290,12 @@ transform:scale(.92);
     &nbsp;&nbsp;&nbsp;• M1 : Xaverlus Win <br>
     &nbsp;&nbsp;&nbsp;- M2 : Nexo Win <br>
     &nbsp;&nbsp;&nbsp;- M3 : Nexo Win
-     </div>
-      <div class="social-btn" style="display:block;margin-bottom:10px;text-align:left;">
-    • ... : <br>
-    &nbsp;&nbsp;&nbsp;• M1 : ... Win <br>
-    &nbsp;&nbsp;&nbsp;- M2 : ... Win <br>
-    &nbsp;&nbsp;&nbsp;- M3 : ... Win
+    </div>
+    <div class="social-btn" style="display:block;margin-bottom:10px;text-align:left;" onclick="openBluesky()">
+    • Bluesky : <br>
+    &nbsp;&nbsp;&nbsp;• M1 : Nexo Win <br>
+    &nbsp;&nbsp;&nbsp;- M2 : Nexo Win
+    </div>
     </div>
     </div>
   </div>
@@ -423,6 +435,23 @@ document.addEventListener("click", e=>{
     closeXaverlus();
   }
 });
+
+let blueskyPopup;
+
+function openBluesky(){
+  blueskyPopup = document.getElementById("blueskyPopup");
+  blueskyPopup.classList.add("active");
+}
+
+function closeBluesky(){
+  blueskyPopup.classList.remove("active");
+}
+
+document.addEventListener("click", e=>{
+  if(e.target.id === "blueskyPopup"){
+    closeBluesky();
+  }
+});
 </script>
 
 <div class="babu-popup" id="babuPopup">
@@ -448,6 +477,19 @@ document.addEventListener("click", e=>{
       <div class="babu-item"><p>M2</p><img src="BABUIMG/XAVERLUS/M2.jpg"></div>
       <div class="babu-item"><p>M3</p><img src="BABUIMG/XAVERLUS/M3.jpg"></div>
       <div class="babu-item"><p>NAMA CC</p><img src="BABUIMG/XAVERLUS/NAMACC.jpg"></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="babu-popup" id="blueskyPopup">
+  <div class="babu-box">
+    <div class="babu-close" onclick="closeBluesky()">✕</div>
+
+    <div class="babu-grid">
+      <div class="babu-item"><p>M1</p><img src="BABUIMG/BLUESKY/M1.jpg"></div>
+      <div class="babu-item"><p>M2</p><img src="BABUIMG/BLUESKY/M2.jpg"></div>
+      <div class="babu-item"><p>NAMA CC</p><img src="BABUIMG/BLUESKY/NAMACC.jpg"></div>
     </div>
 
   </div>
