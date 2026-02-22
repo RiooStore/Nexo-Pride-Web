@@ -287,36 +287,42 @@ transform:scale(.92);
     <div class="social-btn" style="display:block;margin-bottom:10px;text-align:left;" onclick="openBabu()">
     • Matadore : <br>
     &nbsp;&nbsp;&nbsp;• M1 : Nexo Win <br>
-    &nbsp;&nbsp;&nbsp;- M2 : Matadore Win <br>
-    &nbsp;&nbsp;&nbsp;- M3 : Nexo Win
+    &nbsp;&nbsp;&nbsp;• M2 : Matadore Win <br>
+    &nbsp;&nbsp;&nbsp;• M3 : Nexo Win
     </div>
     <div class="social-btn" style="display:block;margin-bottom:10px;text-align:left;" onclick="openXaverlus()">
     • Xaverlus : <br>
     &nbsp;&nbsp;&nbsp;• M1 : Xaverlus Win <br>
-    &nbsp;&nbsp;&nbsp;- M2 : Nexo Win <br>
-    &nbsp;&nbsp;&nbsp;- M3 : Nexo Win
+    &nbsp;&nbsp;&nbsp;• M2 : Nexo Win <br>
+    &nbsp;&nbsp;&nbsp;• M3 : Nexo Win
     </div>
     <div class="social-btn" style="display:block;margin-bottom:10px;text-align:left;" onclick="openBluesky()">
     • Bluesky : <br>
     &nbsp;&nbsp;&nbsp;• M1 : Nexo Win <br>
-    &nbsp;&nbsp;&nbsp;- M2 : Nexo Win
+    &nbsp;&nbsp;&nbsp;• M2 : Nexo Win
     </div>
     <div class="social-btn" style="display:block;margin-bottom:10px;text-align:left;" onclick="openWkp()">
     • Wkp : <br>
     &nbsp;&nbsp;&nbsp;• M1 : Nexo Win <br>
-    &nbsp;&nbsp;&nbsp;- M2 : Nexo Win
+    &nbsp;&nbsp;&nbsp;• M2 : Nexo Win
     </div>
     <div class="social-btn" style="display:block;margin-bottom:10px;text-align:left;" onclick="openIzanagi()">
     • Izanagi : <br>
     &nbsp;&nbsp;&nbsp;• M1 : Nexo Win <br>
-    &nbsp;&nbsp;&nbsp;- M2 : Izanagi Win <br>
-    &nbsp;&nbsp;&nbsp;- M3 : Nexo Win
+    &nbsp;&nbsp;&nbsp;• M2 : Izanagi Win <br>
+    &nbsp;&nbsp;&nbsp;• M3 : Nexo Win
     </div>
     <div class="social-btn" style="display:block;margin-bottom:10px;text-align:left;" onclick="openMargasawit()">
     • Marga Sawit : <br>
     &nbsp;&nbsp;&nbsp;• M1 : Nexo Win <br>
-    &nbsp;&nbsp;&nbsp;- M2 : Marga Sawit Win <br>
-    &nbsp;&nbsp;&nbsp;- M3 : Nexo Win
+    &nbsp;&nbsp;&nbsp;• M2 : Marga Sawit Win <br>
+    &nbsp;&nbsp;&nbsp;• M3 : Nexo Win
+    </div>
+    <div class="social-btn" style="display:block;margin-bottom:10px;text-align:left;" onclick="openAllbasegoser()">
+    • Allbase Goser : <br>
+    &nbsp;&nbsp;&nbsp;• M1 : Nexo Win <br>
+    &nbsp;&nbsp;&nbsp;• M2 : Allbase Goser <br>
+    &nbsp;&nbsp;&nbsp;• M3 : Nexo Win
     </div>
     </div>
     </div>
@@ -525,6 +531,23 @@ document.addEventListener("click", e=>{
     closeMargasawit();
   }
 });
+
+let allbasegoserPopup;
+
+function openAllbasegoser(){
+  allbasegoserPopup = document.getElementById("allbasegoserPopup");
+  allbasegoserPopup.classList.add("active");
+}
+
+function closeAllbasegoser(){
+  allbasegoserPopup.classList.remove("active");
+}
+
+document.addEventListener("click", e=>{
+  if(e.target.id === "allbasegoserPopup"){
+    closeAllbasegoser();
+  }
+});
 </script>
 
 <div class="babu-popup" id="babuPopup">
@@ -604,6 +627,20 @@ document.addEventListener("click", e=>{
       <div class="babu-item"><p>M2</p><img src="BABUIMG/MARGASAWIT/M2.jpg"></div>
       <div class="babu-item"><p>M3</p><img src="BABUIMG/MARGASAWIT/M3.jpg"></div>
       <div class="babu-item"><p>NAMA CC</p><img src="BABUIMG/MARGASAWIT/NAMACC.jpg"></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="babu-popup" id="allbasegoserPopup">
+  <div class="babu-box">
+    <div class="babu-close" onclick="closeAllbasegoser()">✕</div>
+
+    <div class="babu-grid">
+      <div class="babu-item"><p>M1</p><img src="BABUIMG/ALLBASEGOSER/M1.jpg"></div>
+      <div class="babu-item"><p>M2</p><img src="BABUIMG/ALLBASEGOSER/M2.jpg"></div>
+      <div class="babu-item"><p>M3</p><img src="BABUIMG/ALLBASEGOSER/M3.jpg"></div>
+      <div class="babu-item"><p>NAMA CC</p><img src="BABUIMG/ALLBASEGOSER/NAMACC.jpg"></div>
     </div>
 
   </div>
